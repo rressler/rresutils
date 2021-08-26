@@ -20,3 +20,5 @@ Imports:
     knitr,
     xfun,
     rmarkdown
+URL: https://github.com/rressler/rresutils
+BugReports: https://github.com/rressler/rresutils/issues
