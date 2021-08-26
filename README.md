@@ -16,8 +16,8 @@ devtools::install\_github(“rressler/rresutils”)
 
 ## Examples
 
-The package has two similar functions. These are based on ideas in
-section 17.5 of the [R Markdown
+The package has two similar functions. These are based on ideas and code
+samples in section 17.5 of the [R Markdown
 Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html)
 
 ### knitr utilities
