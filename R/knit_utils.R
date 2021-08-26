@@ -15,8 +15,7 @@
 #'
 #' @examples
 #' # Use the following YAML setting after removing the leading comment
-
-# knit: rresutils::rres_knit_solutions_date
+#' # knit: rresutils::rres_knit_solutions_date
 
 rres_knit_solutions_date <- function(input, ...) {
   rmarkdown::render(
@@ -53,9 +52,8 @@ rres_knit_solutions_date <- function(input, ...) {
 #'
 #' @examples
 #' # Use the following YAML setting after removing the leading comment
-
-# knit: rresutils::rres_knit_solutions
-
+#' # knit: rresutils::rres_knit_solutions
+#'
 rres_knit_solutions <- function(input, ...) {
   rmarkdown::render(
     input,
