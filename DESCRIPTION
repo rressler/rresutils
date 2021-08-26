@@ -1,15 +1,14 @@
 Package: rresutils
-Title: What the Package Does (One Line, Title Case)
+Title: Utilities for Teaching with R and R Markdown
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Richard",
+           family = "Ressler",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+           email = "rressler@american.edu",
+           comment = c(ORCID = "TBD"))
+Description: Utilty functions designed to ease teaching  R and R Markdown.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
