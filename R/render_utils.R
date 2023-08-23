@@ -8,6 +8,7 @@
 #' https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html
 #'
 #' @param input text: the name of the file to be rendered
+#' @param fext text for the file extension
 #' @param ... text: other parameters to be passed to the render function
 #'
 #' @return creates two output files in the default directory. both have the current date appended to the file name. One has no solutions in the output and the second has solutions and the word solutions in the output file name.
@@ -17,17 +18,17 @@
 #' # Use the following YAML setting after removing the leading comment
 #' # knit: rresutils::rres_render_solutions_date
 
-rres_render_solutions_date <- function(input, ...) {
+rres_render_solutions_date <- function(input, fext = "html", ...) {
   quarto::quarto_render(
     input,
     output_file = paste0(
-      xfun::sans_ext(input), '_solutions-', Sys.Date()),
+      xfun::sans_ext(input), '_solutions-', Sys.Date(), ".", fext),
     execute_params = list(solutions = "false")
   );
   quarto::quarto_render(
     input,
     output_file = paste0(
-      xfun::sans_ext(input), '_student-', Sys.Date()),
+      xfun::sans_ext(input), '_student-', Sys.Date(), ".", fext),
     execute_params = list(solutions = "false")
   )
 }
@@ -43,6 +44,7 @@ rres_render_solutions_date <- function(input, ...) {
 #' https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html
 #'
 #' @param input text: the name of the file to be rendered
+#' @param fext text for the file extension
 #' @param ... text: other parameters to be passed to the render function
 #'
 #' @return creates two output files in the default directory. . One has no solutions in the output and the second has solutions and the word solutions in the output file name.
@@ -52,15 +54,15 @@ rres_render_solutions_date <- function(input, ...) {
 #' # Use the following YAML setting after removing the leading comment
 #' # knit: rresutils::rres_knit_solutions
 #'
-rres_render_solutions <- function(input, ...) {
+rres_render_solutions <- function(input, fext = "html", ...) {
   quarto::quarto_render(
     input,
-    output_file = paste0(xfun::sans_ext(input), '_solutions'),
+    output_file = paste0(xfun::sans_ext(input), '_solutions',".",fext),
     execute_params = list(solutions = "true")
   );
   quarto::quarto_render(
     input,
-    output_file = paste0(xfun::sans_ext(input), '_student'),
+    output_file = paste0(xfun::sans_ext(input), '_student',".",fext),
     execute_params = list(solutions = "false")
   )
 }
