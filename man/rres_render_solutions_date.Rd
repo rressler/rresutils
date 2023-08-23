@@ -4,10 +4,12 @@
 \alias{rres_render_solutions_date}
 \title{Render two versions of a file, with and without solutions}
 \usage{
-rres_render_solutions_date(input, ...)
+rres_render_solutions_date(input, fext = "html", ...)
 }
 \arguments{
 \item{input}{text: the name of the file to be rendered}
+
+\item{fext}{text for the file extension}
 
 \item{...}{text: other parameters to be passed to the render function}
 }
