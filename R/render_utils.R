@@ -12,7 +12,7 @@
 #' @param ... text: other parameters to be passed to the render function
 #'
 #' @return creates two output files in the default directory. both have the current date appended to the file name. One has no solutions in the output and the second has solutions and the word solutions in the output file name.
-#' @export rres_knit_solutions_date
+#' @export rres_render_solutions_date
 #'
 #' @examples
 #' # Use the following YAML setting after removing the leading comment
@@ -22,13 +22,13 @@ rres_render_solutions_date <- function(input, fext = "html", ...) {
   quarto::quarto_render(
     input,
     output_file = paste0(
-      xfun::sans_ext(input), '_solutions-', Sys.Date(), ".", fext),
+      xfun::sans_ext(input), '_solutions-', Sys.Date(), '.', fext),
     execute_params = list(solutions = "false")
   );
   quarto::quarto_render(
     input,
     output_file = paste0(
-      xfun::sans_ext(input), '_student-', Sys.Date(), ".", fext),
+      xfun::sans_ext(input), '_student-', Sys.Date(), '.', fext),
     execute_params = list(solutions = "false")
   )
 }
@@ -48,21 +48,21 @@ rres_render_solutions_date <- function(input, fext = "html", ...) {
 #' @param ... text: other parameters to be passed to the render function
 #'
 #' @return creates two output files in the default directory. . One has no solutions in the output and the second has solutions and the word solutions in the output file name.
-#' @export rres_knit_solutions
+#' @export rres_render_solutions
 #'
 #' @examples
 #' # Use the following YAML setting after removing the leading comment
-#' # knit: rresutils::rres_knit_solutions
+#' # knit: rresutils::rres_render_solutions
 #'
 rres_render_solutions <- function(input, fext = "html", ...) {
   quarto::quarto_render(
     input,
-    output_file = paste0(xfun::sans_ext(input), '_solutions',".",fext),
+    output_file = paste0(xfun::sans_ext(input), '_solutions.', fext),
     execute_params = list(solutions = "true")
   );
   quarto::quarto_render(
     input,
-    output_file = paste0(xfun::sans_ext(input), '_student',".",fext),
+    output_file = paste0(xfun::sans_ext(input), '_student.', fext),
     execute_params = list(solutions = "false")
   )
 }

@@ -2,3 +2,5 @@
 
 export(rres_knit_solutions)
 export(rres_knit_solutions_date)
+export(rres_render_solutions)
+export(rres_render_solutions_date)

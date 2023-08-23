@@ -27,6 +27,6 @@ https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html
 }
 \examples{
 # Use the following YAML setting after removing the leading comment
-# knit: rresutils::rres_knit_solutions
+# knit: rresutils::rres_render_solutions
 
 }
