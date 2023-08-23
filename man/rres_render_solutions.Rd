@@ -14,19 +14,20 @@ rres_render_solutions(input, fext = "html", ...)
 \item{...}{text: other parameters to be passed to the render function}
 }
 \value{
-creates two output files in the default directory. . One has no solutions in the output and the second has solutions and the word solutions in the output file name.
+creates two output files in the default directory.
+The one with no solutions in the output has the word student in the file name.
+The one with solutions has the word solutions in the file name.
 }
 \description{
-This function assumes the YAML header of an R Markdown file uses a parameter called solutions, params: solutions which has two values, TRUE and FALSE. The file may use this parameter to adjust the r markdown chunk options such as eval or echo when rendering to output the solutions to exercises or not.
+This function assumes the YAML header of a .qmd file uses a parameter
+called solutions, params: solutions which has two values, TRUE and FALSE.
+The file may use this parameter to adjust the R markdown chunk options
+such as eval or echo when rendering to output the solutions to exercises.
 }
 \details{
-The function may be placed in the YAML header of an R Markdown document where it will be invoked on the first output type.
-
-See Rmarkdown Cookbook Section 17.5 as a reference
-https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html
+The function works as a standalone function called in the console or script.
 }
 \examples{
-# Use the following YAML setting after removing the leading comment
-# knit: rresutils::rres_render_solutions
+# rresutils::rres_render_solutions("my_path/file")
 
 }
