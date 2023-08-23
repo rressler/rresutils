@@ -7,18 +7,18 @@ Authors@R:
            role = c("aut", "cre"),
            email = "rressler@american.edu",
            comment = c(ORCID = "TBD"))
-Description: Utilty functions designed to ease teaching  R and R Markdown.
+Description: Utilty functions designed to ease teaching R, Quarto, and R Markdown.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 Suggests: 
     spelling
 Language: en-US
 Imports: 
-    knitr,
     xfun,
-    rmarkdown
+    rmarkdown,
+    quarto
 URL: https://github.com/rressler/rresutils
 BugReports: https://github.com/rressler/rresutils/issues

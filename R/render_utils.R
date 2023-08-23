@@ -1,8 +1,8 @@
 #' Render two versions of a file, with and without solutions
 #'
-#' This function assumes the YAML header of an R Markdown file uses a parameter called solutions, params: solutions which has two values, TRUE and FALSE. The file may use this parameter to adjust the r markdown chunk options such as eval or echo when rendering to output the solutions to exercises or not.
+#' This function assumes the YAML header of a .qmd file uses a parameter called solutions, params: solutions which has two values, TRUE and FALSE. The file may use this parameter to adjust the r markdown chunk options such as eval or echo when rendering to output the solutions to exercises or not.
 #'
-#' The function may be placed in the YAML header of an R Markdown document where it will be invoked on the first output type.
+#' The function may be placed in the YAML header of a .qmd file where it will be invoked on the first output type.
 #'
 #' See Rmarkdown Cookbook Section 17.5 as a reference
 #' https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html
@@ -15,22 +15,20 @@
 #'
 #' @examples
 #' # Use the following YAML setting after removing the leading comment
-#' # knit: rresutils::rres_knit_solutions_date
+#' # knit: rresutils::rres_render_solutions_date
 
-rres_knit_solutions_date <- function(input, ...) {
-  rmarkdown::render(
+rres_render_solutions_date <- function(input, ...) {
+  quarto::quarto_render(
     input,
     output_file = paste0(
       xfun::sans_ext(input), '_solutions-', Sys.Date()),
-    envir = globalenv(),
-    params = list(solutions = TRUE)
+    execute_params = list(solutions = "false")
   );
-  rmarkdown::render(
+  quarto::quarto_render(
     input,
     output_file = paste0(
-      xfun::sans_ext(input), '-', Sys.Date()),
-    envir = globalenv(),
-    params = list(solutions = FALSE)
+      xfun::sans_ext(input), '_student-', Sys.Date()),
+    execute_params = list(solutions = "false")
   )
 }
 
@@ -54,19 +52,15 @@ rres_knit_solutions_date <- function(input, ...) {
 #' # Use the following YAML setting after removing the leading comment
 #' # knit: rresutils::rres_knit_solutions
 #'
-rres_knit_solutions <- function(input, ...) {
-  rmarkdown::render(
+rres_render_solutions <- function(input, ...) {
+  quarto::quarto_render(
     input,
-    output_file = paste0(
-      xfun::sans_ext(input), '_solutions'),
-    envir = globalenv(),
-    params = list(solutions = TRUE)
+    output_file = paste0(xfun::sans_ext(input), '_solutions'),
+    execute_params = list(solutions = "true")
   );
-  rmarkdown::render(
+  quarto::quarto_render(
     input,
-    output_file = paste0(
-      xfun::sans_ext(input)),
-    envir = globalenv(),
-    params = list(solutions = FALSE)
+    output_file = paste0(xfun::sans_ext(input), '_student'),
+    execute_params = list(solutions = "false")
   )
 }
