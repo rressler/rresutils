@@ -6,13 +6,18 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of rresutils is to support teaching of R and R Markdown topics.
+The goal of rresutils is to support teaching of R using Quarto/R
+Markdown.
 
 ## Installation
 
 You can install the released version of rresutils from GitHub with:
 
-devtools::install_github(“rressler/rresutils”)
+`devtools::install_github("rressler/rresutils")`
+
+or
+
+`remotes::install_github("rressler/rresutils")`
 
 ## Examples
 
@@ -59,8 +64,7 @@ Enter the following into the YAML header and then knit. It will use the
 first output type in your YAML be it PDF or HTML. The file with
 solutions will have the “\_solutions” in the file name.
 
-      knit: rresutils::rres_knit_solutions
-      
+`knit: rresutils::rres_knit_solutions`
 
 #### `rres_knit_solutions_date()`
 
@@ -72,5 +76,4 @@ first output type in your YAML be it PDF or HTML. The file with the
 solutions will have “\_solutions” in the file name. Both files will have
 the current date added to the file name.
 
-      knit: rresutils::rres_knit_solutions_date
-      
+`knit: rresutils::rres_knit_solutions_date`
